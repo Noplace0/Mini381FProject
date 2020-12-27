@@ -23,7 +23,7 @@ app.use(session({
 //demo
 const users = new Array(
 	{name: 'demo', password: ''},
-	{name: 'student', password: 'admin'}
+	{name: 'student', password: 'student'}
 );
 
 //login
