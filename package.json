@@ -1,0 +1,19 @@
+{
+    "name": "COMPS381F-MiniProject",
+    "author": "Cheng Yiu Hang",
+    "description": "nothing",
+    "version": "0.0.1",
+    "dependencies": {
+        "connect-flash": "^0.1.1",
+        "express": "latest",
+        "ejs": "latest",
+        "cookie-session": "latest",
+        "body-parser": "latest",
+        "mongodb": "3.1",
+        "formidable": "latest"
+    },
+    "scripts": {
+        "start": "node server.js"
+    },
+    "engine": "*"
+}

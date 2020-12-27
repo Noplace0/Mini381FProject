@@ -1,0 +1,73 @@
+<html>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <body style="background-color: rgb(173, 183, 238);">
+        <title>Restaurant Details</title>
+        <ul>
+            <% for (var r of restaurant) { %>
+                <% if (r.photo) { %>
+                    <img src="data:image/jpg;base64, <%= r.photo %>"><br>
+                <% } %>
+
+                <h1>Restaurant Name: <%= r.name %></h1>
+                <br>
+                <p>Borough: <%= r.borough %></p>
+                <p>Cuisine: <%= r.cuisine %></p>
+                
+                <p>Street: <%= r.address.street %></p>
+                <p>Zipcode: <%= r.address.zipcode %></p>
+                <p>Building: <%= r.address.building %></p>
+
+                <p>GPS: <%= r.address.coord %></p>
+
+                    <ol>
+                        <% for (var i =0; i <= r.grades.length-1;  i++ ) { %>
+                        <li><%= r.grades[i].user %> : <%= r.grades[i].score%> </li>
+                        
+                        <% } %>
+                    </ol>
+
+
+
+
+                <p>Created by: <%= r.owner %></p>
+                <% if (r.address.coord[0] && r.address.coord[1]) { %>       
+                <a href="/map?lat=<%= r.address.coord[0] %>&lon=<%= r.address.coord[1]%>&title=12" style="text-decoration: none">
+                <button class="w3-btn w3-section w3-teal w3-ripple">MAP</button></a>
+                <% } %>
+
+                <% if (session.username == r.owner) { %>
+
+
+                    <a href="/delete?_id=<%=r._id %>" style="text-decoration: none">
+                        <button class="w3-btn w3-section w3-teal w3-ripple">Delete</button></a>
+
+                    <a href="/update?_id=<%=r._id %>" style="text-decoration: none">
+                        <button class="w3-btn w3-section w3-teal w3-ripple">Update</button></a>
+                <% } %>
+
+                <% var count = 0; %>
+                <% for (i in r.grades) { %>
+                    <% if (r.grades[i].user == session.username) { %>
+                        <% count++; %>
+                    <% } %>
+                <% } %>
+                <% if (count == 0) { %>
+                    <a href="/rate?_id=<%=r._id %>" style="text-decoration: none">
+                        <button class="w3-btn w3-section w3-teal w3-ripple">Rate</button></a>
+
+                <% } %>
+
+
+
+                <% } %>
+
+                <p>
+                    <a href="/restaurants">
+                        <button>Go Back Home</button>
+                    </a>
+                </p>
+          </BODY>
+        </ul>
+    </body>
+
+</html>

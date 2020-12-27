@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Rate</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+</head>
+<body style="background-color: rgb(173, 183, 238);">
+
+	<div class="w3-container w3-teal">
+		<h2>Rate </h2>
+	</div>
+	
+
+	<div class="container">
+        <form action="/rate" method="post">
+            <input type="hidden" id="r_id" name="r_id" value="<%= restaurant[0]._id %>">
+			<div class="form-group">
+				<label for="rating">Score (1-10):</label>
+                <input type="number" class="form-control" id="rating" name="rating" min="1" max="10">
+			</div>
+			<button type="submit" class="btn btn-primary">Rate</button>
+		</form>
+	</div>
+</body>
+
+</html>

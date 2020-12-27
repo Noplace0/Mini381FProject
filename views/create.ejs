@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>
+        New Restaurant
+    </title>
+</head>
+<body style="background-color: rgb(173, 183, 238);">
+    <h1>Create New Restaurant</h1>
+<form id = 'create' method = 'POST' enctype="multipart/form-data" action='/create'>
+    <input type ="hidden" name="creator" >
+    Name:<input type = "text" name = 'name' required><br>
+    Borough: <input type="text" name="borough"><br>
+    Cuisine: <input type="text" name = "cuisine"><br>
+    Address:<input type="text" name="building" placeholder="Building">,
+            <input type = "text" name = "street" placeholder="Street">,
+            <input type = "text" name = "zipcode" placeholder="Zipcode"><br>
+    Coordinates: <input type = "text" name = "lat">,<input type="text" name = "long"> <br>
+    Photo: <input type="file" name="photo"> <br>
+    <input type="submit" value="Submit">
+    <a href="/restaurants">
+        <button>Go Back Home</button>
+    </a>
+</form>
+
+</body>
+</html>

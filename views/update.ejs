@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Update restaurant</title>
+
+</head>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body style="background-color: rgb(173, 183, 238);">
+
+    <h1>Update restaruant info</h1>
+    
+    <div class="container">
+        <form action="/update" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="_id" name="_id" value="<%= restaurant[0]._id %>">
+                <label for="name">Restaurant Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= restaurant[0].name %>" minlength="1">
+                <br>
+                <label for="borough">Borough</label>
+                <input type="text" class="form-control" id="borough" value="<%= restaurant[0].borough %>" name="borough">
+                <br>
+                <label for="cuisine">Cuisine</label>
+                <input type="text" class="form-control" id="cuisine" value="<%= restaurant[0].cuisine %>" name="cuisine">
+                <br>
+                <label for="street">Street</label>
+                <input type="text" class="form-control" id="street" value="<%= restaurant[0].address.street %>" name="street">
+                <br>
+                <label for="building">Building</label>
+                <input type="text" class="form-control" id="building" value="<%= restaurant[0].address.building %>" name="building">
+                <br>
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" id="zipcode" value="<%= restaurant[0].address.zipcode %>" name="zipcode">
+                <br>
+                <label for="lat">Latitude</label>
+                <input type="text" class="form-control" id="lat" value="<%= restaurant[0].address.coord[0] %>" name="lat">
+                <br>
+                <label for="long">Longitude</label>
+                <input type="text" class="form-control" id="long" value="<%= restaurant[0].address.coord[1] %>" name="long">
+                <br>
+                <label for="photo">Photo</label>
+                <input type="file" class="form-control-file" id="photo" name="photo">
+                <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,1 +1,1 @@
-# Mini381FProject
+COMPS381F - Mini Project - Submission

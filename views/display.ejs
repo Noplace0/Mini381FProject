@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+        </style>
+    </head>
+
+    <body style="background-color: rgb(173, 183, 238);">
+        <title>Home Page</title>
+        <h1>Restaurants</h1>
+        <p>Weclome user: <%=username%></p>
+        <p>Showing <%=restaurants.length%> documents </p><hr>
+
+        <form action = '/create' method="GET">
+        <input type = "submit" value = "Create new documents">
+        </form>
+
+        <br>
+        <form id="searchForm" class="form-inline" action="/search" method="GET">
+                        <label class="input-group-text" for="searchBy">Search Restaurants</label>
+
+                    <select name="searchBy" form="searchForm" class="custom-select" id="searchBy">
+                        <option selected>Choose...</option>
+                        <option value="name">Name</option>
+                        <option value="borough">Borough</option>
+                        <option value="cuisine">Cuisine</option>
+                    </select>
+            <input class="form-control mr-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <br>
+
+        <ul>
+            <% for (var r of restaurants) { %>
+            <li><a href="/show?_id=<%=r._id %>"><%= r.name%></a></li>
+            <% } %>
+
+        </ul>
+
+        <form action = "/logout" method="GET">
+            <input type = "submit" value = "logout">
+        </form>
+        
+    </body>
+</html>
