@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const ObjectID = require('mongodb').ObjectID;
 
-const mongourl = 'mongodb+srv://ToddyAdmin:T12345@cluster0.ahmuq.mongodb.net/test?retryWrites=true&w=majority';
+const mongourl = 'mongodb+srv://ToddyAdmin:HideMyPassword@cluster0.ahmuq.mongodb.net/test?retryWrites=true&w=majority';
 const dbName = "test";
 
 const fs = require('fs');
